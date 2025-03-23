@@ -1,0 +1,108 @@
+2025-03-23 00:17:18,847 - main - INFO - Starting single video generation process
+2025-03-23 00:17:18,874 - idea_generator - INFO - IdeaGenerator initialized
+2025-03-23 00:17:18,874 - voice_generator - INFO - VoiceGenerator initialized
+2025-03-23 00:17:18,874 - video_selector - INFO - VideoSelector initialized
+2025-03-23 00:17:18,875 - video_editor - INFO - VideoEditor initialized
+2025-03-23 00:17:18,875 - main - INFO - Generating video idea
+2025-03-23 00:17:18,875 - idea_generator - ERROR - Error generating video idea: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-23 00:17:18,875 - main - ERROR - Failed to generate video idea
+2025-03-23 00:17:55,922 - main - INFO - Starting single video generation process
+2025-03-23 00:17:55,922 - idea_generator - INFO - IdeaGenerator initialized
+2025-03-23 00:17:55,922 - voice_generator - INFO - VoiceGenerator initialized
+2025-03-23 00:17:55,923 - video_selector - INFO - VideoSelector initialized
+2025-03-23 00:17:55,923 - video_editor - INFO - VideoEditor initialized
+2025-03-23 00:17:55,923 - main - INFO - Generating video idea
+2025-03-23 00:17:55,923 - idea_generator - ERROR - Error generating video idea: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-03-23 00:17:55,923 - main - ERROR - Failed to generate video idea
+2025-03-23 00:19:38,762 - main - INFO - Starting single video generation process
+2025-03-23 00:19:38,763 - idea_generator - INFO - IdeaGenerator initialized
+2025-03-23 00:19:38,763 - voice_generator - INFO - VoiceGenerator initialized
+2025-03-23 00:19:38,763 - video_selector - INFO - VideoSelector initialized
+2025-03-23 00:19:38,764 - video_editor - INFO - VideoEditor initialized
+2025-03-23 00:19:38,764 - main - INFO - Generating video idea
+2025-03-23 00:19:43,730 - idea_generator - INFO - Generated video idea: How to dance trends with popular music for travel
+2025-03-23 00:19:43,730 - main - INFO - Generating voiceover
+2025-03-23 00:19:43,730 - voice_generator - INFO - Generating voiceover with voice ID: default
+2025-03-23 00:19:44,183 - voice_generator - ERROR - Error generating voiceover: 400 - {"detail":{"status":"voice_not_found","message":"A voice for the voice_id default was not found."}}
+2025-03-23 00:19:44,183 - main - ERROR - Failed to generate voiceover
+2025-03-23 00:23:02,369 - main - INFO - Starting single video generation process
+2025-03-23 00:23:02,370 - idea_generator - INFO - IdeaGenerator initialized
+2025-03-23 00:23:02,370 - voice_generator - INFO - VoiceGenerator initialized
+2025-03-23 00:23:02,370 - video_selector - INFO - VideoSelector initialized
+2025-03-23 00:23:02,370 - video_editor - INFO - VideoEditor initialized
+2025-03-23 00:23:02,370 - main - INFO - Generating video idea
+2025-03-23 00:23:07,719 - idea_generator - INFO - Generated video idea: The secret to educational content with surprising facts for travel
+2025-03-23 00:23:07,720 - main - INFO - Generating voiceover
+2025-03-23 00:23:07,720 - voice_generator - INFO - Generating voiceover with voice ID: default
+2025-03-23 00:23:07,983 - voice_generator - ERROR - Error generating voiceover: 400 - {"detail":{"status":"voice_not_found","message":"A voice for the voice_id default was not found."}}
+2025-03-23 00:23:07,983 - main - ERROR - Failed to generate voiceover
+2025-03-23 00:25:32,165 - main - INFO - Starting single video generation process
+2025-03-23 00:25:32,165 - idea_generator - INFO - IdeaGenerator initialized
+2025-03-23 00:25:32,166 - voice_generator - INFO - VoiceGenerator initialized
+2025-03-23 00:25:32,166 - video_selector - INFO - VideoSelector initialized
+2025-03-23 00:25:32,166 - video_editor - INFO - VideoEditor initialized
+2025-03-23 00:25:32,166 - main - INFO - Generating video idea
+2025-03-23 00:25:36,698 - idea_generator - INFO - Generated video idea: How to duets and collaborative content for comedy
+2025-03-23 00:25:36,698 - main - INFO - Generating voiceover
+2025-03-23 00:25:36,699 - voice_generator - INFO - Generating voiceover with voice ID: UgBBYS2sOqTuMpoF3BR0
+2025-03-23 00:25:46,742 - voice_generator - INFO - Voiceover saved to assets/audio\voiceover_1742685946.mp3
+2025-03-23 00:25:46,743 - main - INFO - Selecting video clips
+2025-03-23 00:25:46,743 - video_selector - INFO - Extracted keywords: ['allow', 'travel', 'laughs']
+2025-03-23 00:25:46,743 - video_selector - INFO - Searching Pexels for: allow
+2025-03-23 00:25:47,292 - video_selector - INFO - Downloading video: https://videos.pexels.com/video-files/6935811/6935811-hd_720_1280_30fps.mp4
+2025-03-23 00:25:47,681 - video_selector - INFO - Video saved to assets/video\allow_1742685947.mp4
+2025-03-23 00:25:47,681 - video_selector - INFO - Searching Pexels for: travel
+2025-03-23 00:25:48,062 - video_selector - INFO - Downloading video: https://videos.pexels.com/video-files/2023708/2023708-hd_720_1280_30fps.mp4
+2025-03-23 00:25:48,298 - video_selector - INFO - Video saved to assets/video\travel_1742685948.mp4
+2025-03-23 00:25:48,298 - video_selector - INFO - Searching Pexels for: laughs
+2025-03-23 00:25:48,911 - video_selector - INFO - Downloading video: https://videos.pexels.com/video-files/3704445/3704445-hd_1080_2048_25fps.mp4
+2025-03-23 00:25:52,929 - video_selector - INFO - Video saved to assets/video\laughs_1742685948.mp4
+2025-03-23 00:25:52,929 - video_selector - INFO - Selected 3 videos for script
+2025-03-23 00:25:52,929 - main - INFO - Creating final video
+2025-03-23 00:25:52,990 - video_editor - INFO - Creating video with 3 clips and audio duration 43.78s
+2025-03-23 00:25:53,149 - video_editor - ERROR - Error creating video: 'VideoFileClip' object has no attribute 'resize'
+2025-03-23 00:25:53,150 - main - ERROR - Failed to create final video
+2025-03-23 00:32:40,634 - main - INFO - Starting single video generation process
+2025-03-23 00:32:40,635 - idea_generator - INFO - IdeaGenerator initialized
+2025-03-23 00:32:40,635 - voice_generator - INFO - VoiceGenerator initialized
+2025-03-23 00:32:40,635 - video_selector - INFO - VideoSelector initialized
+2025-03-23 00:32:40,635 - video_editor - INFO - VideoEditor initialized
+2025-03-23 00:32:40,635 - main - INFO - Generating video idea
+2025-03-23 00:32:45,593 - idea_generator - INFO - Generated video idea: How to duets and collaborative content for diy & crafts
+2025-03-23 00:32:45,593 - main - INFO - Generating voiceover
+2025-03-23 00:32:45,593 - voice_generator - INFO - Generating voiceover with voice ID: UgBBYS2sOqTuMpoF3BR0
+2025-03-23 00:32:54,207 - voice_generator - INFO - Voiceover saved to assets/audio\voiceover_1742686374.mp3
+2025-03-23 00:32:54,207 - main - INFO - Selecting video clips
+2025-03-23 00:32:54,207 - video_selector - INFO - Extracted keywords: ['collaborate', 'bonding', 'engage']
+2025-03-23 00:32:54,207 - video_selector - INFO - Searching Pexels for: collaborate
+2025-03-23 00:32:54,951 - video_selector - INFO - Downloading video: https://videos.pexels.com/video-files/6100414/6100414-hd_1080_2048_30fps.mp4
+2025-03-23 00:32:55,734 - video_selector - INFO - Video saved to assets/video\collaborate_1742686374.mp4
+2025-03-23 00:32:55,734 - video_selector - INFO - Searching Pexels for: bonding
+2025-03-23 00:32:56,260 - video_selector - INFO - Downloading video: https://videos.pexels.com/video-files/31252864/13347128_360_640_30fps.mp4
+2025-03-23 00:32:56,434 - video_selector - INFO - Video saved to assets/video\bonding_1742686376.mp4
+2025-03-23 00:32:56,434 - video_selector - INFO - Searching Pexels for: engage
+2025-03-23 00:32:56,864 - video_selector - INFO - Downloading video: https://videos.pexels.com/video-files/3826638/3826638-hd_1080_2048_25fps.mp4
+2025-03-23 00:32:57,788 - video_selector - INFO - Video saved to assets/video\engage_1742686376.mp4
+2025-03-23 00:32:57,788 - video_selector - INFO - Selected 3 videos for script
+2025-03-23 00:32:57,788 - main - INFO - Creating final video
+2025-03-23 00:32:57,843 - video_editor - INFO - Creating video with 3 clips and audio duration 40.49s
+2025-03-23 00:32:58,033 - video_editor - ERROR - Error creating video: name 'resize' is not defined
+2025-03-23 00:32:58,033 - main - ERROR - Failed to create final video

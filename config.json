@@ -1,0 +1,20 @@
+{
+  "video_settings": {
+    "resolution": "1080x1920",
+    "fps": 30,
+    "bitrate": "8000k",
+    "format": "mp4"
+  },
+  "audio_settings": {
+    "sample_rate": 44100,
+    "bitrate": "192k",
+    "normalize_db": -14
+  },
+  "voice_settings": {
+    "default_voice": "UgBBYS2sOqTuMpoF3BR0",
+    "stability": 0.75,
+    "similarity_boost": 0.75,
+    "style": "conversational",
+    "speed": 1.2
+  }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TikTok Video Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #ff0050; }
+        .section { margin-bottom: 30px; border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        select, input, textarea { width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        button { background-color: #ff0050; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #cc0040; }
+        #ideaOutput, #videoOutput { margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-radius: 5px; display: none; }
+        video { width: 100%; max-width: 400px; display: block; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>TikTok Video Generator</h1>
+    
+    <div class="section">
+        <h2>Step 1: Generate Video Idea</h2>
+        <form id="ideaForm">
+            <label for="category">Category (optional):</label>
+            <select id="category" name="category">
+                <option value="">Random</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Education">Education</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Fashion">Fashion</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Food">Food</option>
+                <option value="Travel">Travel</option>
+                <option value="Technology">Technology</option>
+                <option value="Finance">Finance</option>
+            </select>
+            
+            <label for="audience">Target Audience (optional):</label>
+            <select id="audience" name="audience">
+                <option value="">Random</option>
+                <option value="Teenagers (13-17)">Teenagers (13-17)</option>
+                <option value="Young Adults (18-24)">Young Adults (18-24)</option>
+                <option value="Millennials (25-34)">Millennials (25-34)</option>
+                <option value="Parents">Parents</option>
+                <option value="Professionals">Professionals</option>
+                <option value="Students">Students</option>
+            </select>
+            
+            <button type="submit">Generate Idea</button>
+        </form>
+        
+        <div id="ideaOutput"></div>
+    </div>
+    
+    <div class="section">
+        <h2>Step 2: Generate Video</h2>
+        <button id="generateVideo" disabled>Generate Video</button>
+        <div id="videoOutput"></div>
+    </div>
+    
+    <script>
+        let currentIdea = null;
+        
+        document.getElementById('ideaForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const outputDiv = document.getElementById('ideaOutput');
+            outputDiv.innerHTML = 'Generating idea...';
+            outputDiv.style.display = 'block';
+            
+            try {
+                const response = await fetch('/generate_idea', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    currentIdea = data.idea;
+                    
+                    outputDiv.innerHTML = `
+                        <h3>${data.idea.title}</h3>
+                        <p><strong>Category:</strong> ${data.idea.category}</p>
+                        <p><strong>Target Audience:</strong> ${data.idea.target_audience}</p>
+                        <p><strong>Trend Type:</strong> ${data.idea.trend_type}</p>
+                        
+                        <h4>Script:</h4>
+                        <p><strong>Hook:</strong> ${data.idea.script.hook}</p>
+                        <p><strong>Body:</strong> ${data.idea.script.body}</p>
+                        <p><strong>CTA:</strong> ${data.idea.script.cta}</p>
+                        
+                        <h4>Hashtags:</h4>
+                        <p>${data.idea.hashtags.join(', ')}</p>
+                    `;
+                    
+                    document.getElementById('generateVideo').disabled = false;
+                } else {
+                    outputDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+                }
+            } catch (error) {
+                outputDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+        });
+        
+        document.getElementById('generateVideo').addEventListener('click', async function() {
+            if (!currentIdea) return;
+            
+            this.disabled = true;
+            this.textContent = 'Generating Video...';
+            
+            const outputDiv = document.getElementById('videoOutput');
+            outputDiv.innerHTML = 'Generating video (this may take a few minutes)...';
+            outputDiv.style.display = 'block';
+            
+            try {
+                const response = await fetch('/generate_video', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        script: currentIdea.script
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    outputDiv.innerHTML = `
+                        <p>Video generated successfully!</p>
+                        <video controls>
+                            <source src="${data.video_url}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p><a href="${data.video_url}" download>Download Video</a></p>
+                    `;
+                } else {
+                    outputDiv.innerHTML = `<p>Error: ${data.error}</p>`;
+                }
+            } catch (error) {
+                outputDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+            }
+            
+            this.textContent = 'Generate Video';
+            this.disabled = false;
+        });
+    </script>
+</body>
+</html>
